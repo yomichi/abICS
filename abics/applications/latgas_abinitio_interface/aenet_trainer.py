@@ -151,17 +151,18 @@ class Aenet_trainer(TrainerBase):
         while True:
             # Repeat until test set error begins to rise
             with open(os.path.join(os.getcwd(), "stdout"), "w") as fi:
-                subprocess.run(
-                    self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
-                )
-                # try:
-                #     subprocess.run(
-                #         self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
-                #     )
-                # except subprocess.CalledProcessError as e:
-                #     print(e.stdout)
-                #     print(e.stderr)
-                #     raise
+                # subprocess.run(
+                #     self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
+                # )
+                try:
+                    # subprocess.run(
+                    #     self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
+                    # )
+                    subprocess.run(["mpiexec", "-np", "2", "/home/runner/opt/aenet/bin/train.x_mpi", "train.in"], check=True)
+                except subprocess.CalledProcessError as e:
+                    print(e.stdout)
+                    print(e.stderr)
+                    raise
             with open("stdout", "r") as trainout:
                 fullout = trainout.readlines()
                 epoch_data = []

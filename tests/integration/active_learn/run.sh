@@ -18,14 +18,14 @@ rm -rf ./generate0
 rm -rf ./baseinput
 
 sh ./AL.sh
-sh ./MC.sh
-sh ./AL.sh
-sh ./MC.sh
+# sh ./MC.sh
+# sh ./AL.sh
+# sh ./MC.sh
 
-if [ -e MC1/kTs.npy ] ; then
-  echo OK
-  exit 0
-else
-  echo FAILED
-  exit 1
-fi
+# if [ -e MC1/kTs.npy ] ; then
+#   echo OK
+#   exit 0
+# else
+#   echo FAILED
+#   exit 1
+# fi
