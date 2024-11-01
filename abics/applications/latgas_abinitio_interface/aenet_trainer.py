@@ -143,6 +143,7 @@ class Aenet_trainer(TrainerBase):
             os.path.join(self.generate_outputdir, "aenet.train"),
             os.path.join(os.getcwd(), "aenet.train"),
         )
+        subprocess.run(["pwd"])
         while True:
             if os.path.exists("train.in") and os.path.exists("aenet.train"):
                 break
