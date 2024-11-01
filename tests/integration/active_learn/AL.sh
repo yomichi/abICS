@@ -1,23 +1,18 @@
-#!/bin/sh
-# rm -f active.out
-# echo start AL sample
-# mpiexec -np 2 --oversubscribe abics_mlref input.toml
-# echo start parallel_run 1
-# sh parallel_run.sh
-# sleep 5
+!/bin/sh
+rm -f active.out
+echo start AL sample
+mpiexec -np 2 --oversubscribe abics_mlref input.toml
+echo start parallel_run 1
+sh parallel_run.sh
+sleep 5
 
-# echo start AL final
-# mpiexec -np 2 --oversubscribe abics_mlref input.toml
-# sleep 5
+echo start AL final
+mpiexec -np 2 --oversubscribe abics_mlref input.toml
+sleep 5
 
-# #train
-# echo start training
-# abics_train input.toml
-# echo 'cat train0/stdout'
-# cat train0/stdout
-# echo Done
-
-
-python3 -c 'import subprocess; subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "hoge"], check=True)'
-
-python3 -c 'import subprocess; from mpi4py import MPI; subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "fuga"], check=True)'
+#train
+echo start training
+abics_train input.toml
+echo 'cat train0/stdout'
+cat train0/stdout
+echo Done

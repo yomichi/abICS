@@ -144,12 +144,12 @@ class Aenet_trainer(TrainerBase):
             os.path.join(os.getcwd(), "aenet.train"),
         )
         subprocess.run(["pwd"], check=True)
-        subprocess.run(["mpiexec", "-np", "2", "echo", "hello"], check=True)
-        subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "world"], check=True)
-        while True:
-            if os.path.exists("train.in") and os.path.exists("aenet.train"):
-                break
-            time.sleep(0.1)
+        # subprocess.run(["mpiexec", "-np", "2", "echo", "hello"], check=True)
+        # subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "world"], check=True)
+        # while True:
+        #     if os.path.exists("train.in") and os.path.exists("aenet.train"):
+        #         break
+        #     time.sleep(0.1)
         # command = self.train_exe + " train.in"
         # print(os.getcwd())
         # print(command)
@@ -162,10 +162,10 @@ class Aenet_trainer(TrainerBase):
                 #     self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
                 # )
                 try:
-                    # subprocess.run(
-                    #     self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
-                    # )
-                    subprocess.run(self.train_exe, check=True)
+                    subprocess.run(
+                        self.train_exe, stdout=fi, stderr=subprocess.STDOUT, check=True
+                    )
+                    # subprocess.run(self.train_exe, check=True)
                     # subprocess.run(["mpiexec", "-np", "2", "/home/runner/opt/aenet/bin/train.x_mpi", "train.in"], check=True)
                 except subprocess.CalledProcessError as e:
                     print(f'{e.stdout=}')
