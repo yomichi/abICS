@@ -230,4 +230,4 @@ class AenetPyLammpsSolver(SolverBase):
 
 
 # register_solver("aenetpylammps", AenetPyLammpsSolver)
-register_solver_lazy("aenetpylammps", "AenetPyLammpsSolver", "abics.applications.latgas_abinitio_interface.aenet_pylammps")
+# register_solver_lazy("aenetpylammps", "AenetPyLammpsSolver", "abics.applications.latgas_abinitio_interface.aenet_pylammps")
