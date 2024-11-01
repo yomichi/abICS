@@ -143,9 +143,9 @@ class Aenet_trainer(TrainerBase):
             os.path.join(self.generate_outputdir, "aenet.train"),
             os.path.join(os.getcwd(), "aenet.train"),
         )
-        subprocess.run(["pwd"])
-        subprocess.run(["mpiexec", "-np", "2", "echo", "hello"])
-        subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "world"])
+        subprocess.run(["pwd"], check=True)
+        subprocess.run(["mpiexec", "-np", "2", "echo", "hello"], check=True)
+        subprocess.run(["mpiexec", "-np", "2", "--oversubscribe", "echo", "world"], check=True)
         while True:
             if os.path.exists("train.in") and os.path.exists("aenet.train"):
                 break
