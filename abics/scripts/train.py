@@ -16,6 +16,9 @@
 
 from __future__ import annotations
 
+import mpi4py
+mpi4py.rc.initialize = False
+
 import datetime
 import itertools
 import logging
